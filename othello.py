@@ -122,7 +122,7 @@ def minimax(board, depth, maximizing, player):
     if depth == 0 or game.is_game_over():
         return evaluate_board(game.board), None
 
-    valid_moves = game.get_valid_moves(player)
+    valid_moves = game.get_valid_moves(player) or [None]
     best_move = None
 
     if maximizing:
